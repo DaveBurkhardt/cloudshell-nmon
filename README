@@ -10,3 +10,13 @@ cloudshell-nmon:  This script will set the small font and get the app running on
 Manual install you will want to copy the font file (miniwi-8.psf.gz) into /usr/share/consolefonts
 
 Of course this all assumes you have the Cloudshell LCD working via it's module: fb_ili9340
+
+** NOTE about debian package **
+If you have cloudshell-lcd installed and running it will conflict with my package.  You will need to either.
+
+A) Disable cloudshell-lcd via
+   $sudo service cloudshell-lcd stop
+   $sudo systemctl disable cloudshell-nmon.service 
+
+B) Remove the cloudshell-lcd package  (this will not harm anything else other than it removes the LCD shell script)
+   $sudo dkg --remove cloudshell-lcd
