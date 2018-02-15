@@ -1,10 +1,35 @@
 --- [ Building ] ------------------------------------------------------------------------------
 To compile this you will need ncurses-dev installed.
 To build simply type "make" with the repo after you have pulled it.
-Doing a manual install you will want to copy the font file (miniwi-8.psf.gz) into /usr/share/consolefonts
 
+
+--- [ Manual Install ] ------------------------------------------------------------------------
 Making this fit on the screen requires using a small font called miniwi-8.  It's included (miniwi-8.psf.gz)
 Font Origin:  https://github.com/josuah/miniwi
+1) copy the font file (miniwi-8.psf.gz) into /usr/share/consolefonts
+   $sudo cp miniwi-8.psf.gz /usr/share/consolefonts
+2) Make the shell script executable
+   $sudo chmod 755 cloudshell-nmon
+3) Copy cloudshell-nmon script to /usr/local/bin
+   $sudo cp cloudshell-nmon /usr/local/bin
+4) Add the shell script to your startup (universal way)
+   edit /etc/rc.local add line
+   /usr/local/bin/cloudshell-nmon&
+
+--- [ Running shell script] -------------------------------------------------------------------
+If you have installed the debian package it will auto start when you reboot but you can also use the commands
+
+To start service
+   $sudo service cloudshell-name start
+
+to stop service
+   $sudo service cloudshell-nmon stop
+
+If you have done a manuall install you can reboot or run the command manually detaching it from your current tty with...
+   $sudo nohup cloudshell-nmon 2>&1 >/dev/null &
+
+--- [ What about my console? ] ----------------------------------------------------------------
+Unlike cloudshell-lcd I dont just overwrite your 1st console screen (/dev/tty1).  Instead I use console #8 (/dev/tty8) which is not used.  To switch consoles in Linux just hold down ALT and hit a Function key.  To get to console #1 hit ALT + F1 ; to return to NMON-Xu4 on console #8 hit ALT + F8.
 
 --- [ Files ] ---------------------------------------------------------------------------------
 cloudshell-nmon:  This script will set the small font and get the app running on /dev/tty8 (unused console)
