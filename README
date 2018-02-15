@@ -9,6 +9,22 @@ I did this project because the CLOUDSHELL-LCD shell script took up too much CPU 
 TODO:
 Update 'f' free memory option I added to be color coded.
 
+
+--- [ Files ] ---------------------------------------------------------------------------------
+cloudshell-nmon:  This script will set the small font and get the app running on /dev/tty8 (unused console)
+cloudshell-nmon.deb:  Debian package compiled for Xu4; see my NOTE below before using
+lmon.c:  C source of NMON modified/tweaked for Xu4
+makefile:  makefile to build
+miniwi-8.psf.gz:  Tiny font!
+nmon-xu4:  ARMv7 binary compiled from lmon.c source
+
+
+--- [ Installing debian package ] -------------------------------------------------------------
+Please see my notes below before using the package :)  If you have the Odroid recommended OS installed this package is all you need.  Be sure to read the section on running the shell script after installing as well.
+
+   $sudo dpkg -i cloudshell-nmon.deb
+
+
 --- [ Building ] ------------------------------------------------------------------------------
 To compile this you will need ncurses-dev installed.
 To build simply type "make" with the repo after you have pulled it.
@@ -29,6 +45,7 @@ To build simply type "make" with the repo after you have pulled it.
    Edit /etc/rc.local and add the following line to the end
      /usr/local/bin/cloudshell-nmon&
 
+
 --- [ Running shell script] -------------------------------------------------------------------
 If you have installed the debian package it will auto start when you reboot but you can also use the commands
 
@@ -41,21 +58,9 @@ to stop service
 If you have done a manuall install you can reboot or run the command manually detaching it from your current tty with...
    $sudo nohup cloudshell-nmon 2>&1 >/dev/null &
 
+
 --- [ What about my console? ] ----------------------------------------------------------------
 Unlike cloudshell-lcd I dont just overwrite your 1st console screen (/dev/tty1).  Instead I use console #8 (/dev/tty8) which is not used.  To switch consoles in Linux just hold down ALT and hit a Function key.  To get to console #1 hit ALT + F1 ; to return to NMON-Xu4 on console #8 hit ALT + F8.
-
---- [ Files ] ---------------------------------------------------------------------------------
-cloudshell-nmon:  This script will set the small font and get the app running on /dev/tty8 (unused console)
-cloudshell-nmon.deb:  Debian package compiled for Xu4; see my NOTE below before using
-lmon.c:  C source of NMON modified/tweaked for Xu4
-makefile:  makefile to build
-miniwi-8.psf.gz:  Tiny font!
-nmon-xu4:  ARMv7 binary compiled from lmon.c source
-
---- [ Installing debian package ] -------------------------------------------------------------
-Please see my notes below before using the package :)
-
-   $sudo dpkg -i cloudshell-nmon.deb
 
 
 --- [ Usage ] ---------------------------------------------------------------------------------
@@ -75,6 +80,7 @@ B) Remove the cloudshell-lcd package  (this will not harm anything else other th
 
 --- [ Questions? ] ----------------------------------------------------------------------------
 https://forum.odroid.com/viewtopic.php?f=147&t=29996
+
 
 --- [ CHANGELOG ] -----------------------------------------------------------------------------
 Added option command 'x'  for Xu4 Temperature and CPU
