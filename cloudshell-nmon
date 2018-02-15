@@ -1,0 +1,28 @@
+#!/bin/bash
+# hardkernel CloudShell Screen update /w NMON
+#
+# requires the following packages:
+# font 
+# curses
+############## Configuration
+
+# Change LCD to TTY8 
+chvt 8
+
+# change terminal
+export TERM=linux
+
+# Disable LCD Slepp mode
+echo -e '\033[9;0]' > /dev/tty8
+
+# console font to very small
+setfont miniwi-8 -C /dev/tty8
+
+# assign the script to cpu0
+PID=$$
+taskset -cp 1 $PID
+
+# Set default screen options for NMON
+export NMON=xnfcD
+
+/bin/nmon-xu4 >/dev/tty8 2>&1 < /dev/tty8

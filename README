@@ -1,0 +1,12 @@
+To compile this you will need ncurses-dev installed.
+
+As well making this fit on the screen requires using a small font called miniwi-8.  It's included here.
+Font Origin:  https://github.com/josuah/miniwi
+
+To build simply type "make" with the repo.
+
+cloudshell-nmon:  This script will set the small font and get the app running on /dev/tty8 (unused console)
+
+Manual install you will want to copy the font file (miniwi-8.psf.gz) into /usr/share/consolefonts
+
+Of course this all assumes you have the Cloudshell LCD working via it's module: fb_ili9340
