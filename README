@@ -63,7 +63,7 @@ To start service
 to stop service
    $sudo service cloudshell-nmon stop
 
-If you have done a manuall install you can reboot or run the command manually detaching it from your current tty with...
+If you have done a manual install you can reboot or run the command manually detaching it from your current tty with...
    $sudo nohup cloudshell-nmon 2>&1 >/dev/null &
 
 

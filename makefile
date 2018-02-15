@@ -5,7 +5,7 @@ CFLAGS=-g -O3 -Wall -D JFS -D GETUSER -D LARGEMEM
 LDFLAGS=-lncurses -lm -g
 FILE=lmon.c
 
-### Raspbery pi
+### Xu4
 nmon_arm_raspian:  $(FILE)
 	cc -o nmon-xu4 $(FILE) $(CFLAGS) $(LDFLAGS) -D ARM  -D KERNEL_2_6_18
 
