@@ -15,9 +15,8 @@ cloudshell-nmon		This script will set the small font,terminal and get the app ru
 			/dev/tty8 (unused console).  Change the LCD to console 8 to display nmon-xu4.
 			Choose startup display options for nmon.
 
-cloudshell-nmon.deb	Debian package compiled for Xu4; it includes everything in here minus
-			source code/makefile.  Sets app to startup automatically.  Please see 
-			my NOTES below before using.
+cloudshell-nmon.deb	Debian package compiled for Xu4; it includes everything needed to run the app.
+			Sets app to startup automatically.  Please see my NOTES below before using.
 
 lmon.c			C source of NMON modified/tweaked for Xu4
 
