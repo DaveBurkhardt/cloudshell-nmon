@@ -7,14 +7,18 @@ To build simply type "make" with the repo after you have pulled it.
 Making this fit on the screen requires using a small font called miniwi-8.  It's included (miniwi-8.psf.gz)
 Font Origin:  https://github.com/josuah/miniwi
 1) copy the font file (miniwi-8.psf.gz) into /usr/share/consolefonts
-   $sudo cp miniwi-8.psf.gz /usr/share/consolefonts
+     $sudo cp miniwi-8.psf.gz /usr/share/consolefonts
+2) Make nmon-xu4 binary executable (skip if you compiled yourself)
+     $sudo chmod 755 nmon-xu4
+2) copy nmon-xu4 binary to /usr/local/bin
+     $sudo cp nmon-xu4 /usr/local/bin
 2) Make the shell script executable
-   $sudo chmod 755 cloudshell-nmon
+     $sudo chmod 755 cloudshell-nmon
 3) Copy cloudshell-nmon script to /usr/local/bin
-   $sudo cp cloudshell-nmon /usr/local/bin
+     $sudo cp cloudshell-nmon /usr/local/bin
 4) Add the shell script to your startup (universal way)
-   edit /etc/rc.local add line
-   /usr/local/bin/cloudshell-nmon&
+   Edit /etc/rc.local and add the following line to the end
+     /usr/local/bin/cloudshell-nmon&
 
 --- [ Running shell script] -------------------------------------------------------------------
 If you have installed the debian package it will auto start when you reboot but you can also use the commands
