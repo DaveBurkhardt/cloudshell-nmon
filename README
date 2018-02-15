@@ -25,11 +25,11 @@ ALL of this assumes you have the Cloudshell LCD working via it's module: fb_ili9
 
 
 --- [ NOTES ] ---------------------------------------------------------------------------------
-If you have cloudshell-lcd installed and running it will conflict with my package.  You will need to either.
+If you have cloudshell-lcd installed and running it will conflict with my package.  You will need to either A or B below.
 
 A) Disable cloudshell-lcd via
    $sudo service cloudshell-lcd stop
-   $sudo systemctl disable cloudshell-nmon.service 
+   $sudo systemctl disable cloudshell-lcd.service 
 
 B) Remove the cloudshell-lcd package  (this will not harm anything else other than it removes the LCD shell script)
    $sudo dkg --remove cloudshell-lcd
