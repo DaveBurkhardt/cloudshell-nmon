@@ -11,16 +11,16 @@ Update 'f' free memory option I added to be color coded.
 
 
 --- [ Files ] ---------------------------------------------------------------------------------
-cloudshell-nmon:  This script will set the small font and get the app running on /dev/tty8 (unused console)
-cloudshell-nmon.deb:  Debian package compiled for Xu4; see my NOTE below before using
-lmon.c:  C source of NMON modified/tweaked for Xu4
-makefile:  makefile to build
-miniwi-8.psf.gz:  Tiny font!
-nmon-xu4:  ARMv7 binary compiled from lmon.c source
+cloudshell-nmon		This script will set the small font and get the app running on /dev/tty8 (unused console)
+cloudshell-nmon.deb	Debian package compiled for Xu4; see my NOTE below before using
+lmon.c			C source of NMON modified/tweaked for Xu4
+makefile		makefile to build
+miniwi-8.psf.gz		Tiny font!
+nmon-xu4		ARMv7 binary compiled from lmon.c source
 
 
 --- [ Installing debian package ] -------------------------------------------------------------
-Please see my notes below before using the package :)  If you have the Odroid recommended OS installed this package is all you need.  Be sure to read the section on running the shell script after installing as well.
+Please see my notes below before using the package :)  If you have the Odroid recommended OS installed this package is all you need.  As well it might be compatible with other ARM based debian system.  Be sure to read the section on running the shell script after installing as well.
 
    $sudo dpkg -i cloudshell-nmon.deb
 
