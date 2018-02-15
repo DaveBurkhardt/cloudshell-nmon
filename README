@@ -54,7 +54,7 @@ ALL of this assumes you have the Cloudshell LCD working via it's module: fb_ili9
 
 
 --- [ NOTES ] ---------------------------------------------------------------------------------
-If you have cloudshell-lcd installed and running it will conflict with my package.  You will need to either A or B below.
+If you have cloudshell-lcd installed and running it might conflict with my package since it autostarts.  However it might not since I run on console 8. If someone lets me know I'll update this :)   If it does you will need to do either A or B below.  
 
 A) Disable cloudshell-lcd via
    $sudo service cloudshell-lcd stop
