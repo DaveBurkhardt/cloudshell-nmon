@@ -1,15 +1,19 @@
 To compile this you will need ncurses-dev installed.
+To build simply type "make" with the repo after you have pulled it.
+Doing a manual install you will want to copy the font file (miniwi-8.psf.gz) into /usr/share/consolefonts
 
-As well making this fit on the screen requires using a small font called miniwi-8.  It's included here.
+Making this fit on the screen requires using a small font called miniwi-8.  It's included (miniwi-8.psf.gz)
 Font Origin:  https://github.com/josuah/miniwi
 
-To build simply type "make" with the repo.
-
+--- [ Files ] ------------
 cloudshell-nmon:  This script will set the small font and get the app running on /dev/tty8 (unused console)
+cloudshell-nmon.deb:  Debian package compiled for Xu4; see my NOTE below before using
+lmon.c:  C source of NMON modified/tweaked for Xu4
+makefile:  makefile to build
+miniwi-8.psf.gz:  Tiny font!
+nmon-xu4:  ARMv7 binary compiled from lmon.c source
 
-Manual install you will want to copy the font file (miniwi-8.psf.gz) into /usr/share/consolefonts
-
-Of course this all assumes you have the Cloudshell LCD working via it's module: fb_ili9340
+Of course ALL of this assumes you have the Cloudshell LCD working via it's module: fb_ili9340.  Now you can use the nmon-xu4 without the module to run in normal terminal.
 
 ** NOTE about debian package **
 If you have cloudshell-lcd installed and running it will conflict with my package.  You will need to either.
@@ -20,3 +24,11 @@ A) Disable cloudshell-lcd via
 
 B) Remove the cloudshell-lcd package  (this will not harm anything else other than it removes the LCD shell script)
    $sudo dkg --remove cloudshell-lcd
+
+
+Changelog:
+Added option command 'x'  for Xu4 Temperature and CPU
+Added option command 'f' to show memory free like 'free' command does
+Modified 'd/D' function to supress the 'boot' devices (don't care to waste space seeing these).
+Modified source to not output the network errors on start
+Tweaked color/formatting
