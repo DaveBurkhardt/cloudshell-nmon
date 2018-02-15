@@ -60,7 +60,7 @@ If you have done a manuall install you can reboot or run the command manually de
 
 
 --- [ What about my console? ] ----------------------------------------------------------------
-Unlike cloudshell-lcd I dont just overwrite your 1st console screen (/dev/tty1).  Instead I use console #8 (/dev/tty8) which is not used.  To switch consoles in Linux just hold down ALT and hit a Function key.  To get to console #1 hit ALT + F1 ; to return to NMON-Xu4 on console #8 hit ALT + F8.
+Unlike cloudshell-lcd I dont just overwrite your 1st console screen (/dev/tty1).  Instead I use console #8 (/dev/tty8) which is not used.  To switch consoles in Linux just hold down ALT and hit a Function key.  To get to console #1 hit ALT + F1 ; to return to NMON-Xu4 on console #8 hit ALT + F8.  **Note these key combinations are only applicable to a local keyboard connected to the Xu4.
 
 
 --- [ Usage ] ---------------------------------------------------------------------------------
