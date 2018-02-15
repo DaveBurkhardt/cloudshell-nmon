@@ -24,7 +24,7 @@ Font Origin:  https://github.com/josuah/miniwi
 If you have installed the debian package it will auto start when you reboot but you can also use the commands
 
 To start service
-   $sudo service cloudshell-name start
+   $sudo service cloudshell-nmon start
 
 to stop service
    $sudo service cloudshell-nmon stop
