@@ -1,11 +1,20 @@
+---[ Overview ] -------------------------------------------------------------------------------
+What is this?!?  This project is making nmon fit on the 320x240 LCD screen on an Odroid Cloudshell 2.  As well modify NMON to support reading the Xu4 CPU temperature, A7 and A15 clock speeds.  Making this fit on the screen requires using a small font called miniwi-8.  It's included in this repo (miniwi-8.psf.gz)
+Font Origin:  https://github.com/josuah/miniwi
+
+Other modification were done to optimize NMON readability on the small screen/font.
+
+I did this project because the CLOUDSHELL-LCD shell script took up too much CPU nearly 20% of one core is what I was finding.  You'll see NMON doesn't take up any noticable ammount of CPU :)  And provides a lot more information.  Granted you need to be in front of the unit to see it, lol.  I color coded as much as possible so from a distance you can see something is wrong; which then in turn you can take a look.
+
+TODO:
+Update 'f' free memory option I added to be color coded.
+
 --- [ Building ] ------------------------------------------------------------------------------
 To compile this you will need ncurses-dev installed.
 To build simply type "make" with the repo after you have pulled it.
 
 
 --- [ Manual Install ] ------------------------------------------------------------------------
-Making this fit on the screen requires using a small font called miniwi-8.  It's included (miniwi-8.psf.gz)
-Font Origin:  https://github.com/josuah/miniwi
 1) copy the font file (miniwi-8.psf.gz) into /usr/share/consolefonts
      $sudo cp miniwi-8.psf.gz /usr/share/consolefonts
 2) Make nmon-xu4 binary executable (skip if you compiled yourself)
