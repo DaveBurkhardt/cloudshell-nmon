@@ -14,10 +14,16 @@ Update 'f' free memory option I added to be color coded.
 cloudshell-nmon		This script will set the small font,terminal and get the app running on 
 			/dev/tty8 (unused console).  As well change the LCD to console 8
                         to display NMON.
-cloudshell-nmon.deb	Debian package compiled for Xu4; see my NOTE below before using
+
+cloudshell-nmon.deb	Debian package compiled for Xu4; it includes everything in here minus
+			source code/makefile.  Please see my NOTE below before using.
+
 lmon.c			C source of NMON modified/tweaked for Xu4
+
 makefile		makefile to build
+
 miniwi-8.psf.gz		Tiny font!
+
 nmon-xu4		ARMv7 binary compiled from lmon.c source
 
 
