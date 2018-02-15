@@ -5517,8 +5517,13 @@ mvwprintw(padwelcome,x+8, 3, "------------------------------");
 	        proc_mem();
 		BANNER(padfree, "Memory Usage");
 		COLOUR wattrset(padfree, COLOR_PAIR(0));
-		mvwprintw(padfree, 1, 0, "Total %d  Used %d  Free %d  Available %d",
-                     p->mem.memtotal,(p->mem.memtotal-p->mem.memavailable-p->mem.memfree-p->mem.buffers), p->mem.memfree,p->mem.memavailable);
+                if (p->mem.memtotal-p->mem.memfree-p->mem.buffers-p->mem.cached < 0) {
+		mvwprintw(padfree, 1, 0, "Total %d  Used %d  Buff/Cache %d  Free %d  Avail %d",
+                     p->mem.memtotal,(p->mem.memtotal-p->mem.highfree-p->mem.lowfree), (p->mem.buffers+p->mem.cached),p->mem.memfree,p->mem.memavailable);
+                } else {
+		mvwprintw(padfree, 1, 0, "Total %d  Used %d  Buff/Cache %d  Free %d  Avail %d",
+                     p->mem.memtotal,(p->mem.memtotal-p->mem.memfree-p->mem.buffers-p->mem.cached),(p->mem.buffers+p->mem.cached),p->mem.memfree,p->mem.memavailable);
+                }
 		//COLOUR wattrset(padfree, COLOR_PAIR(0));
 		//mvwprintw(padfree, 1, 20, "A15 @ %d Mhz",atoi(proc[P_A15SPEED].line[0])/1000);
 	        DISPLAY(padfree, 2);
